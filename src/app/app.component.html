@@ -1,0 +1,84 @@
+<div class="main" >
+
+  <section class="signup">
+      <!-- <img src="images/signup-bg.jpg" alt=""> -->
+      <div class="container">
+          <div class="signup-content">
+              <form [formGroup]="registrationForm">
+                  <h2 class="form-title">CRUD operations using angular</h2>
+                  <div class="form-group">
+                      <input formControlName="EmpId"  type="text" class="form-input" name="name" id="EmpId" placeholder="EmpId"/>
+                  </div>
+                  <div class="form-group">
+                      <input formControlName="Name"  type="email" class="form-input" name="email" id="Name" placeholder="Name"/>
+                  </div>
+                  <div class="form-group">
+                      <input formControlName="EmpCode"  type="text" class="form-input" name="EmpCode" id="EmpCode" placeholder="EmpCode"/>
+                  </div>
+                  <div class="form-group">
+                      <input formControlName="Salary"  type="text" class="form-input" name="name" id="Salary" placeholder="Salary"/>
+                  </div>
+                   
+                  <div class="form-group">
+                      <input type="submit" (click)="register()"name="submit" id="submit" class="form-submit" value="Register"/>
+            
+                  </div>
+                  <hr>
+                  <div class="form-group">
+                      <input type="button"  (click)="getUser()" name="getUser"  class="form-submit"  value="getUser">
+                  <!-- <li *ngFor ="let user of users">
+                      {{user.EmpId}}{{""}}{{user.Name}}{{"    "}}{{user.EmpCode}}{{"     "}}{{user.Salary}}  -->
+                      <table border="1">                      
+                          <tr *ngFor ="let da of users">
+                            <td>{{da.EmpId}}</td>
+                           <td>{{da.Name}}</td>
+                           <td>{{da.Empcode}}</td>
+                           <td>{{da.Salary}}</td> 
+                           </tr>
+                     </table>  
+                    </div>
+                  </form>
+                  <hr>
+                  
+                      <form [formGroup]="deleteForm"> 
+                          <input formControlName="delete"  type="delete" class="form-input" name="delete" id="delete" placeholder="delete"/>
+                      <input type="button" (click)="deleteUser()" name="delete" id="delete" class="form-submit" value="Delete" >
+                   
+              </form>
+              <hr>
+
+           <form [formGroup]="updateForm" >
+                  <h2 class="form-title">Update</h2>
+                  <div class="form-group">
+                      <input formControlName="EmpId1"  type="text" class="form-input" name="name1" id="EmpId1" placeholder="EmpId"/>
+                  </div>
+                  <div class="form-group">
+                      <input formControlName="Name1"  type="email" class="form-input" name="email1" id="Name1" placeholder="Name"/>
+                  </div>
+                  <div class="form-group">
+                      <input formControlName="EmpCode1"  type="text" class="form-input" name="EmpCode1" id="EmpCode1" placeholder="EmpCode"/>
+                  </div>
+                  <div class="form-group">
+                      <input formControlName="Salary1"  type="text" class="form-input" name="name1" id="Salary1" placeholder="Salary"/>
+                  </div>
+                   
+                  <div class="form-group">
+                      <input type="submit" (click)="updateUser()"name="submit" id="submit" class="form-submit" value="Update Record"/>
+                      <table border="1">                      
+                        <tr *ngFor ="let da of users">
+                          <td>{{da.EmpId}}</td>
+                         <td>{{da.Name}}</td>
+                         <td>{{da.Empcode}}</td>
+                         <td>{{da.Salary}}</td> 
+                         </tr>
+                   </table>  
+                  </div>
+                 
+                  </form>
+                  
+                  
+          </div>
+      </div>
+  </section>
+
+</div>
