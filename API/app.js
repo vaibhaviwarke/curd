@@ -24,7 +24,7 @@ app.use(cors())
 const port =3000;
 
 var con=mysql.createConnection({
-    host:"localhost",
+    host:"172.16.8.93",
     user:"root",
     password:"",
     database:"simpledb",
