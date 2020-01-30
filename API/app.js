@@ -26,9 +26,8 @@ const port =3000;
 var con=mysql.createConnection({
     host:"172.16.8.93",
     user:"root",
-    password:"",
+    password:"System@1234",
     database:"simpledb",
-    multipleStatements:true
 });
 
 con.connect((err)=> {
