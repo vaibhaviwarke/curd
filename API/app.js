@@ -49,7 +49,7 @@ app.post("/register",(req,res)=>
 
     let sql="INSERT INTO employee VALUES (?,?,?,?)"
     con.query(sql,[EmpId,Name,EmpCode,Salary],function(err,result){
-        if(err) throw error;
+        console.log(err);
         res.send("record inserted",+result);
     });
     
