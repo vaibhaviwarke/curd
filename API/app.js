@@ -31,7 +31,7 @@ var con=mysql.createConnection({
 });
 
 con.connect((err)=> {
-    if(err) throw err;
+    //if(err) throw err;
     console.log("DB connection succeded");
 
 });
@@ -49,7 +49,7 @@ app.post("/register",(req,res)=>
 
     let sql="INSERT INTO employee VALUES (?,?,?,?)"
     con.query(sql,[EmpId,Name,EmpCode,Salary],function(err,result){
-        console.log(err);
+        //console.log(err);
         res.send("record inserted",+result);
     });
     
@@ -65,7 +65,7 @@ app.get("/getUser",(req,res)=>
     let sql="SELECT * FROM employee";
     con.query(sql,function(err,result)
     {
-        if(err) throw err;
+        //if(err) throw err;
         res.send(result);
     });
 
@@ -81,7 +81,7 @@ app.post("/deleteUser",(req,res)=>
         });
 let sql="DELETE FROM employee WHERE EmpID IN (?)";
 con.query(sql,[users],function (err,result){
-    if(err)throw err;
+    //if(err)throw err;
     res.send(result);
 });
 });
@@ -98,7 +98,7 @@ console.log(EmpId);
 
 let sql="UPDATE employee SET Name=?,EmpCode=?,Salary=? WHERE EmpID IN(?)";
 con.query(sql,[Name,EmpCode,Salary,EmpId],function(err,result){
-    if(err)throw err;
+    //if(err)throw err;
     res.send("record updated"+result);
 });
 });
