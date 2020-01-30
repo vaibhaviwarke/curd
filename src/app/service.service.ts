@@ -7,7 +7,7 @@ export class ServiceService {
 
   constructor(private _http:HttpClient) { }
 
-private _url='http://localhost:3000/';
+private _url='http://172.16.8.93:3000/';
  
    createUser(data){
      console.log("get clicked ",data);
