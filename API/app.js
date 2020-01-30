@@ -73,14 +73,14 @@ app.get("/getUser",(req,res)=>
 
 app.post("/deleteUser",(req,res)=>
 {
-    console.log(req);
+    //console.log(req);
     let users=req.body;
     users.forEach(element=>
         {
         console.log(element);
         });
 let sql="DELETE FROM employee WHERE EmpId IN (?)";
-console.log(sql);
+//console.log(sql);
 con.query(sql,[users],function (err,result){
     if(err)throw err;
     res.send(result);
