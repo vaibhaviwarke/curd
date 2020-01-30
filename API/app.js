@@ -80,6 +80,7 @@ app.post("/deleteUser",(req,res)=>
         console.log(element);
         });
 let sql="DELETE FROM employee WHERE EmpId IN (?)";
+console.log(sql);
 con.query(sql,[users],function (err,result){
     if(err)throw err;
     res.send(result);
