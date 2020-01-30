@@ -30,6 +30,13 @@ var con=mysql.createConnection({
     database:"simpledb",
 });
 
+// var con=mysql.createConnection({
+//     host:"localhost",
+//     user:"root",
+//     password:"",
+//     database:"simpledb",
+// });
+
 con.connect((err)=> {
     if(err) throw err;
     console.log("DB connection succeded");
@@ -39,7 +46,7 @@ app.use(bodyparser.json());
 app.listen(3000,()=>console.log("express server running at port no:3000"));
 
 
-app.post("/register",(req,res)=>
+app.post("/register",function(req,res, fields)
 {
     
     let EmpId=req.body.EmpId;
@@ -61,7 +68,7 @@ app.post("/register",(req,res)=>
 
 });
 
-app.get("/getUser",(req,res)=>
+app.get("/getUser",function(req,res)
 {
     let sql="SELECT * FROM employee";
     con.query(sql,function(err,result)
@@ -72,7 +79,7 @@ app.get("/getUser",(req,res)=>
 
 });
 
-app.post("/deleteUser",(req,res)=>
+app.post("/deleteUser",function(req,res)
 {
     //console.log(req);
     let users=req.body;
@@ -88,7 +95,7 @@ con.query(sql,[users],function (err,result){
 });
 });
 
-app.post("/updateUser",(req,res)=>{
+app.post("/updateUser",function(req,res){
 console.log("updatecall");
  
 let EmpId=req.body.EmpId1;
