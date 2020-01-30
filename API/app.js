@@ -65,7 +65,7 @@ app.get("/getUser",(req,res)=>
     let sql="SELECT * FROM employee";
     con.query(sql,function(err,result)
     {
-        //if(err) throw err;
+        if(err) throw err;
         res.send(result);
     });
 
@@ -79,9 +79,9 @@ app.post("/deleteUser",(req,res)=>
         {
         console.log(element);
         });
-let sql="DELETE FROM employee WHERE EmpID IN (?)";
+let sql="DELETE FROM employee WHERE EmpId IN (?)";
 con.query(sql,[users],function (err,result){
-    //if(err)throw err;
+    if(err)throw err;
     res.send(result);
 });
 });
@@ -96,9 +96,9 @@ let Salary=req.body.Salary1;
 console.log(EmpId);
 
 
-let sql="UPDATE employee SET Name=?,EmpCode=?,Salary=? WHERE EmpID IN(?)";
+let sql="UPDATE employee SET Name=?,EmpCode=?,Salary=? WHERE EmpId IN(?)";
 con.query(sql,[Name,EmpCode,Salary,EmpId],function(err,result){
-    //if(err)throw err;
+    if(err)throw err;
     res.send("record updated"+result);
 });
 });
