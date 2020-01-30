@@ -31,7 +31,7 @@ var con=mysql.createConnection({
 });
 
 con.connect((err)=> {
-    //if(err) throw err;
+    if(err) throw err;
     console.log("DB connection succeded");
 
 });
